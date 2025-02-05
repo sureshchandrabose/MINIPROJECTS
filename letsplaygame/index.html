@@ -10,6 +10,7 @@
      box-sizing: border-box;
      padding: 0;
      margin: 0;
+     text-decoration: none;
 }
 
 #maincontainer{
@@ -21,6 +22,7 @@
      top: 180px;
      left: 450px;
      border: 2px black solid;
+     box-shadow: 0 0 25px black;
 
 
 }
@@ -28,9 +30,11 @@ body {
     
     animation: animate 1s infinite;
     background-color: black;
+    min-height: 100vh;
+    touch-action: none;
    
 }
-@keyframes animate {
+@keyframes animate{
      10%{
           background-color: red;
           
@@ -189,6 +193,57 @@ h3{
      margin-top: 5px;
 
 
+}
+@media screen and (max-width:695px) {
+     body{
+          width: 500px;
+          height: 500px;
+     }
+     #maincontainer{
+    width: 400px;
+     position: absolute;
+     margin: 20px;
+     top: 50px;
+     left: 0px;
+
+     
+}
+#overlay{
+    
+     position: absolute;
+     height: 1100px;
+     width: 700px;
+     top: 0;
+     opacity: 0.8;
+     z-index: 1;
+     display: block;
+}
+#start{
+     font-size: 30px;
+     padding: 10px;
+     background-color: black;
+     color: white;
+     position: fixed;
+     /* height: 100%;
+     width: 100%; */
+     z-index: 2;
+     border: 2px white solid;
+     top: 300px;
+     left: 120px;
+     display: block;
+}
+#player1{
+     display: inline-block;
+     padding: 20px;
+     margin: 10px;
+     border: none;
+     border-top: none ;
+     border-left:none ;
+     border-bottom:20px rgb(0, 0, 0) solid; ;
+     padding-right: 40px;
+     
+}
+     
 }
 
      </style>
