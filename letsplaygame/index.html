@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, user-scaleble=no">
+     <title>Guess the number</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div id="overlay"></div>
+     <div id="start">
+          <h1  id="st">START</h1>
+          <h4 style="text-align: center; font-size: 15px;">clickhere!</h4>
+     </div>
+     <div id="pla1">
+          <h1  id="st">CONGRATULATIONS!!</h1>
+          <h2>player1 WON !!</h2>
+          <button class="try" onclick="tryagain()">Try again</button>
+          
+     </div>
+     <div id="pla2">
+          <h1  id="st">CONGRATULATIONS!!</h1>
+          <h2>player2 WON !!</h2>
+          <button class="try" onclick="tryagain()">try again</button>
+          
+     </div>
+     <div id="maincontainer">
+          <div id="container">
+               <h1>Let's Have A ENTERTAINMENT..</h1>
+               <h2>Guess the Number from 1 to 10</h2>
+               <h3>who is luckiest one??!...</h3>
+          </div>
+         <div id="players">
+          <div id="player1">
+               <div>
+                    <h1 class="one">Let's Play Game!!</h1>
+               </div>
+               <div>
+                    <h2 id="one">player1..</h2>
+                    <input type="number" id="input">
+                    <button class="btn" onclick="checkdata()">check</button>
+                    <p id="data">YOU ARE RIGHT/wrong</p>
+                    <p id="score">Chances:10</p>
+               </div>
+     
+              </div>
+              <div id="player2">
+               <div>
+                    <h1 class="one" style="color: green;">Let's Play Game!!</h1>
+               </div>
+               <div>
+                    <h2  id="two" >player2..</h2>
+                    <input type="number" id="inputtt">
+                    <button class="btn" onclick="checkdataa()">check</button>
+                    <p id="dataa">YOU ARE RIGHT/wrong</p>
+                    <p id="scoree">Chances:10</p>
+               </div>
+     
+              </div>
+         </div>
+     </div>
+     <script>
+          var sta=document.getElementById("start")
+          var pla1=document.getElementById("pla1")
+          var pla2=document.getElementById("pla2")
+          var trya=document.querySelector(".try")
+          var over=document.getElementById("overlay")
+          var inputt=document.getElementById("input")
+          var data=document.getElementById("data")
+          var tscore=document.getElementById("score")
+          var score=10
+          sta.addEventListener("click",function(){
+               sta.style.display="none"
+               over.style.display="none"
+
+          })
+         
+          
+          function checkdata(){
+               
+               var x= Math.floor(Math.random()*10)+1
+               var guessnumber=inputt.value
+               if(x==guessnumber){
+                    data.textContent="YOU ARE RIGHT"
+                    over.style.display="block" 
+                    pla1.style.display="block"
+
+          
+               }else{
+                    data.textContent="YOU ARE WRONG"
+                    score=score-1
+                    tscore.textContent="chance:"+score
+                    inputt.value=""
+
+               }
+               
+               
+          }
+          var inputttt=document.getElementById("inputtt")
+          var datea=document.getElementById("dataa")
+          var tscorae=document.getElementById("scoree")
+          var scorae=10
+          function checkdataa(){
+               
+               var y= Math.floor(Math.random()*10)+1
+               var guesssnumber=inputttt.value
+               if(y==guesssnumber){
+                    datea.textContent="YOU ARE RIGHT" 
+                    over.style.display="block"
+                    pla2.style.display="block"
+               }else{
+                    datea.textContent="YOU ARE WRONG"
+                    scorae=scorae-1
+                    tscorae.textContent="chance:"+scorae
+                    inputttt.value=""
+               }
+               
+               
+          }
+          //function for ty again
+     function tryagain(){
+          location.reload()
+          pla1.style.display="none"
+          pla2.style.display="none"
+          over.style.display="block"
+          sta.style.display="block"
+
+
+     }
+
+
+     </script>
+</body>
+</html>
